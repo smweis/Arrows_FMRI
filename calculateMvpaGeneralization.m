@@ -1,5 +1,6 @@
 function [] = calculateMvpaGeneralization()
 
+pathSeed('C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03\MVPA_Data_4_Subjects');
 
 
 addpath('MVPA_Data_4_Subjects');
