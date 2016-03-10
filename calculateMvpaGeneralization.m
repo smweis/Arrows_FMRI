@@ -1,11 +1,11 @@
-function [] = calculateMvpaGeneralization()
+function [] = calculateMvpaGeneralization(subjects)  %enter subjects as cell array (e.g., {'103','104',...,'110'}).
 
-pathSeed('C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03\MVPA_Data_4_Subjects');
+pathSeed();
 
-
+%%additional path for script
 addpath('MVPA_Data_4_Subjects');
 
-allSubjects = {'103','104','105','106'};
+allSubjects = subjects;
 
 nParameters = 21;
 nRuns = 6;
