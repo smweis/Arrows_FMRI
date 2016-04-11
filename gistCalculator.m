@@ -7,7 +7,7 @@ currDir = pwd;
 addpath('C:\Users\stweis\Documents\MATLAB\gistdescriptor');
 
 %Where is the data?
-path = 'C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03\FMRI_Experiment_Scripts\Images';
+path = 'C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03\28_Images';
 cd(path);
 %How many images?
 % numImages = 252;
@@ -56,5 +56,9 @@ for i = 1:numImages
         C(i,j) = corr(gist(i,:)',gist(j,:)');
     end
 end
+
+
+
+
 
 cd(currDir);

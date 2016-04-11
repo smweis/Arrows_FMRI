@@ -2,7 +2,7 @@
 
 % %calculate within and between correlations
 
-numImages = 84;
+numImages = 196;
 
 
 %1=ahead,2=left,3=right,4=shLeft,5=shRight,6=slLeft,7=slRight
