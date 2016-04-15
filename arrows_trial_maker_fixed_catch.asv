@@ -300,34 +300,8 @@ end
 
 %doublecheck
 for trial = 1:length(trials)
-    if strcmpi(trials{2,trial},'CATCH')
-        if ischar(trials{8,trial}) && ischar(trials{9,trial})
-            continue
-        elseif strcmpi(trials{3,trial},'DIFF')
-            trials(8:9,trial) = catchListFormat(:,randi([1,9]));
-            dir1 = randi([1,7]);
-            trials(10,trial) = catchListDir(1,dir1);
-            catchListDirRest = catchListDir;
-            catchListDirRest(:,dir1) = [];
-            dir2 = randi([1,6]);
-            trials(11,trial) = catchListDir(1,dir2);
-            trials{12,trial} = randi([1,24]);
-            trials{13,trial} = randi([1,24]);
-            trials(14,trial) = cellstr(strcat(trials{10,trial},'_',trials{8,trial},'_',num2str(trials{12,trial}),'.jpg'));
-            trials(15,trial) = cellstr(strcat(trials{11,trial},'_',trials{9,trial},'_',num2str(trials{13,trial}),'.jpg'));
-            
-        elseif strcmpi(trials{3,trial},'SAME')
-            trials(8:9,trial) = catchListFormat(:,randi([1,9]));
-            dir1 = randi([1,7]);
-            trials(10,trial) = catchListDir(1,dir1);
-            trials(11,trial) = catchListDir(1,dir1);
-             trials{12,trial} = randi([1,24]);
-            trials{13,trial} = randi([1,24]);
-            trials(14,trial) = cellstr(strcat(trials{10,trial},'_',trials{8,trial},'_',num2str(trials{12,trial}),'.jpg'));
-            trials(15,trial) = cellstr(strcat(trials{11,trial},'_',trials{9,trial},'_',num2str(trials{13,trial}),'.jpg'));
-        end
-    end
-end
+    if strcmpi(trials{2,trials},'CATCH')
+        
 
 
 
