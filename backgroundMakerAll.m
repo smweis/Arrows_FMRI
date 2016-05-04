@@ -1,11 +1,11 @@
-
-cd('C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03\Stimuli_Square\PNGs\better');
+addpath('C:\Users\stweis\Documents\GitHub\Arrows_FMRI');
+cd('C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03\FINAL_24_SCHEMAS_WORDS_PNGS\');
 files = dir('*png*');
 temp = struct2cell(files);
 names = temp(1,:)';
 
 %To randomly assign backgrounds
-cd('C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03\Chosen_Images\scrambled');
+cd('C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03\FINAL_24_ALL\scrambled\');
 files_b = dir('*jpg*');
 temp_b = struct2cell(files_b);
 names_b = temp_b(1,:)';
@@ -23,7 +23,7 @@ for i=1:length(names)
     name = name(2:end-1);
     name_b = mat2str(cell2mat(names_b(i)));
     name_b = name_b(2:end-1);
-    backgroundMaker('C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03\Stimuli_Square\PNGs\better',name,name_b,part_num);
+    backgroundMaker('C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03\FINAL_24_SCHEMAS_WORDS_PNGS\',name,name_b,part_num);
 end
 
 names = dir('*.jpg*');
@@ -32,7 +32,7 @@ names = {names(~[names.isdir]).name};
 count = 0;
 
 for i = 1:length(names)
-    if mod(i-1,12) == 0
+    if mod(i-1,24) == 0
         count = 0;
     else
         count = count + 1;

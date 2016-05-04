@@ -3,7 +3,7 @@ function [ImCombo] = backgroundMaker(pathFront, imageFront, imageBack, subjectNu
 %%This function takes an image and combines it with a background. 
 
 [front, ~, alpha] = imread(horzcat(pathFront,'\',imageFront));
-back = imread(horzcat('C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03\Chosen_Images\scrambled\',imageBack));
+back = imread(horzcat('C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03\FINAL_24_ALL\scrambled\',imageBack));
 alpha = repmat(alpha, [1 1 3]);
 front = im2double(front);
 alpha = im2double(alpha);
@@ -19,4 +19,4 @@ img3(y:y+size(front,1)-1, x:x+size(front,2)-1, :) = ...
 
 % And display the result.
 name = imageFront(1:end-4);
-imwrite(img3,horzcat(name,'_',num2str(subjectNumber),'.jpg'),'jpg');
+imwrite(img3,horzcat(name,'_',num2str(subjectNumber),'.png'),'png');
