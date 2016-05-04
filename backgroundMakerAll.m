@@ -5,7 +5,7 @@ temp = struct2cell(files);
 names = temp(1,:)';
 
 %To randomly assign backgrounds
-cd('C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03\FINAL_24_ALL\scrambled\');
+cd('C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03\FINAL_24_IMAGES\scrambled\');
 files_b = dir('*jpg*');
 temp_b = struct2cell(files_b);
 names_b = temp_b(1,:)';

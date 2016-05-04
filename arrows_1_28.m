@@ -14,7 +14,7 @@ addpath(strcat(path,'\stimuli_named'));
 
 impath = 'C:\Users\chatterjeelab\Documents\Arrows_FMRI\Behavioral_Exp v03\stimuli_named';
 cd(impath);
-imnames = dir('*.jpg');
+imnames = dir('*.png');
 imloaded = struct('names','','images','');
 imlist = cell(1,252);
 for i = 1:length(imnames)
@@ -264,7 +264,7 @@ for which_run = run_number:numRuns
         %what kind of trial is it?
         if strcmp(trials(2,i), 'image') || strcmp(trials(2,i), 'schema') || strcmp(trials(2,i), 'word')      
             timetest = GetSecs;
-            theImageLocation = (strcat(trials{1,i},'.jpg'));
+            theImageLocation = (strcat(trials{1,i},'.png'));
             theImage = imloaded(find(strcmp(theImageLocation,imlist))).images;
             imageTexture = Screen('MakeTexture', window, theImage);
             Screen('DrawTexture', window, imageTexture, [], destRect(i,:));

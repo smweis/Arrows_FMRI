@@ -112,8 +112,8 @@ for i = 1:length(catchTrials)
             catchTrials(6,i) = num2cell(catchTrials{5,i} + 1);
         end
     end
-    catchTrials(7,i) = cellstr(strcat(catchTrials{3,i},'_',catchTrials{1,i},'_',num2str(catchTrials{5,i}),'.jpg'));
-    catchTrials(8,i) = cellstr(strcat(catchTrials{4,i},'_',catchTrials{2,i},'_',num2str(catchTrials{6,i}),'.jpg'));
+    catchTrials(7,i) = cellstr(strcat(catchTrials{3,i},'_',catchTrials{1,i},'_',num2str(catchTrials{5,i}),'.png'));
+    catchTrials(8,i) = cellstr(strcat(catchTrials{4,i},'_',catchTrials{2,i},'_',num2str(catchTrials{6,i}),'.png'));
 end
 
 
@@ -161,7 +161,7 @@ for i = 1:length(doubleBlanks)
         if trials{12,i} == trials{13,i}
             trials{13,i} = trials{13,i} + 1;
         end
-        trials(14,i) = cellstr(strcat(trials{10,i},'_',trials{8,i},'_',num2str(trials{12,i}),'.jpg'));
+        trials(14,i) = cellstr(strcat(trials{10,i},'_',trials{8,i},'_',num2str(trials{12,i}),'.png'));
     end
 end
 
@@ -313,8 +313,8 @@ for trial = 1:length(trials)
             trials(11,trial) = catchListDir(1,dir2);
             trials{12,trial} = randi([1,24]);
             trials{13,trial} = randi([1,24]);
-            trials(14,trial) = cellstr(strcat(trials{10,trial},'_',trials{8,trial},'_',num2str(trials{12,trial}),'.jpg'));
-            trials(15,trial) = cellstr(strcat(trials{11,trial},'_',trials{9,trial},'_',num2str(trials{13,trial}),'.jpg'));
+            trials(14,trial) = cellstr(strcat(trials{10,trial},'_',trials{8,trial},'_',num2str(trials{12,trial}),'.png'));
+            trials(15,trial) = cellstr(strcat(trials{11,trial},'_',trials{9,trial},'_',num2str(trials{13,trial}),'.png'));
             
         elseif strcmpi(trials{3,trial},'SAME')
             trials(8:9,trial) = catchListFormat(:,randi([1,9]));
@@ -323,8 +323,8 @@ for trial = 1:length(trials)
             trials(11,trial) = catchListDir(1,dir1);
              trials{12,trial} = randi([1,24]);
             trials{13,trial} = randi([1,24]);
-            trials(14,trial) = cellstr(strcat(trials{10,trial},'_',trials{8,trial},'_',num2str(trials{12,trial}),'.jpg'));
-            trials(15,trial) = cellstr(strcat(trials{11,trial},'_',trials{9,trial},'_',num2str(trials{13,trial}),'.jpg'));
+            trials(14,trial) = cellstr(strcat(trials{10,trial},'_',trials{8,trial},'_',num2str(trials{12,trial}),'.png'));
+            trials(15,trial) = cellstr(strcat(trials{11,trial},'_',trials{9,trial},'_',num2str(trials{13,trial}),'.png'));
         end
     end
 end
