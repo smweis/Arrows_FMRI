@@ -4,7 +4,7 @@ path = 'C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03';
 rng shuffle;
 
 addpath(path);
-addpath(strcat(path,'\FINAL_24_ALL'));
+addpath(strcat(path,'\FINAL_24_IMAGES'));
 %get sequence
 part_num = input('What is the participant ID? ');
 counter_balance = input('What is the counter_balance? (1 for Right is Correct) ');

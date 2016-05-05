@@ -16,8 +16,8 @@ impath = 'C:\Users\chatterjeelab\Documents\Arrows_FMRI\Behavioral_Exp v03\stimul
 cd(impath);
 imnames = dir('*.png');
 imloaded = struct('names','','images','');
-numStims = 504;
-imlist = cell(1,numStims);
+numstims = 336;
+imlist = cell(1,252);
 for i = 1:length(imnames)
     imloaded(i).names = imnames(i).name;
     imloaded(i).images = imread(imnames(i).name);
