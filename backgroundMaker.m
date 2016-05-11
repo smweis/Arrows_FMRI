@@ -1,4 +1,4 @@
-function [ImCombo] = backgroundMaker(pathFront, imageFront, imageBack, subjectNumber)
+function [ImCombo] = backgroundMaker(pathFront, imageFront, imageBack)
 
 %%This function takes an image and combines it with a background. 
 
@@ -19,4 +19,4 @@ img3(y:y+size(front,1)-1, x:x+size(front,2)-1, :) = ...
 
 % And display the result.
 name = imageFront(1:end-4);
-imwrite(img3,horzcat(name,'_',num2str(subjectNumber),'.png'),'png');
+imwrite(img3,horzcat(name,'_','.png'),'png');

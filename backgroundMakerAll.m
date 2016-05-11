@@ -1,3 +1,5 @@
+function [] = backgroundMakerAll(part_num)
+
 addpath('C:\Users\stweis\Documents\GitHub\Arrows_FMRI');
 cd('C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03\FINAL_24_SCHEMAS_WORDS_PNGS\');
 files = dir('*png*');
@@ -11,7 +13,6 @@ temp_b = struct2cell(files_b);
 names_b = temp_b(1,:)';
 names_b = Shuffle(names_b);
 
-part_num = input('What is the participant ID? ');
 
 subpath = horzcat('C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03\FMRI_Experiment_Scripts\',num2str(part_num));
 mkdir(subpath);
@@ -23,7 +24,7 @@ for i=1:length(names)
     name = name(2:end-1);
     name_b = mat2str(cell2mat(names_b(i)));
     name_b = name_b(2:end-1);
-    backgroundMaker('C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03\FINAL_24_SCHEMAS_WORDS_PNGS\',name,name_b,part_num);
+    backgroundMaker('C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03\FINAL_24_SCHEMAS_WORDS_PNGS\',name,name_b);
 end
 
 names = dir('*.jpg*');
