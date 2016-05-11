@@ -12,7 +12,11 @@ path = 'C:\Users\chatterjeelab\Documents\Arrows_FMRI\Behavioral_Exp v03\';
 addpath(path);
 addpath(strcat(path,'\stimuli_named'));
 
-impath = 'C:\Users\chatterjeelab\Documents\Arrows_FMRI\Behavioral_Exp v03\stimuli_named';
+
+part_num = input('What is the participant ID? ');
+
+
+impath = horzcat('C:\Users\chatterjeelab\Documents\Arrows_FMRI\Behavioral_Exp v03\stimuli_named\',part_num);
 cd(impath);
 imnames = dir('*.png');
 imloaded = struct('names','','images','');
@@ -28,8 +32,6 @@ cd(strcat(path,'\FMRI_Experiment_Scripts'));
 
 
 %get sequence
-
-part_num = input('What is the participant ID? ');
 
 
 run_number = input('What is the run? (1 if new subject) ');
