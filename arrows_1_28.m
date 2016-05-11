@@ -11,7 +11,7 @@ rng shuffle;
 path = 'C:\Users\chatterjeelab\Documents\Arrows_FMRI\Behavioral_Exp v03\';
 addpath(path);
 addpath(strcat(path,'\stimuli_named'));
-
+addpath(strcat(path,'\FMRI_Sequences_For_Matlab'));
 
 part_num = input('What is the participant ID? ');
 
