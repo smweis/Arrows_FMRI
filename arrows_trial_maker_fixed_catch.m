@@ -1,4 +1,6 @@
 
+function [] = arrows_trial_maker_fixed_catch(part_num)
+
 %path = 'C:\Users\chatterjeelab\Documents\Arrows_FMRI\Behavioral_Exp v03\';
 path = 'C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03';
 rng shuffle;
@@ -6,15 +8,22 @@ rng shuffle;
 addpath(path);
 addpath(strcat(path,'\FINAL_24_IMAGES'));
 %get sequence
-part_num = input('What is the participant ID? ');
-counter_balance = input('What is the counter_balance? (1 for Right is Correct) ');
+%part_num = input('What is the participant ID? ');
 
-while isnumeric(counter_balance) && (str2double(counter_balance) < 1 || str2double(counter_balance) > 2)
-    counter_balance = input('Sorry. Enter either 1 or 2. ');
+if mod(part_num,2) == 0
+    counter_balance = 1;
+else
+    counter_balance = 2;
 end
 
+%counter_balance = input('What is the counter_balance? (1 for Right is Correct) ');
+%
+% while isnumeric(counter_balance) && (str2double(counter_balance) < 1 || str2double(counter_balance) > 2)
+%     counter_balance = input('Sorry. Enter either 1 or 2. ');
+% end
 
-file = horzcat(path,'\FMRI_Experiment_Scripts\',num2str(part_num),'.txt');
+
+file = horzcat(path,'\FMRI_Experiment_Scripts\FMRI Sequences\',num2str(part_num),'.txt');
 fileID = fopen(file,'r');
 [singleBlanks] = fscanf(fileID, ['%d' ',']);
 singleBlanks = reshape(singleBlanks',1,length(singleBlanks));
@@ -338,4 +347,5 @@ run_length = 100;
 
 
 
-save(horzcat(num2str(part_num),'_trials'));
+save(horzcat(path,'\FMRI_Sequences_For_Matlab\',num2str(part_num),'_trials'));
+
