@@ -16,7 +16,7 @@ addpath(strcat(path,'\stimuli_named'));
 part_num = input('What is the participant ID? ');
 
 
-impath = horzcat('C:\Users\chatterjeelab\Documents\Arrows_FMRI\Behavioral_Exp v03\stimuli_named\',part_num);
+impath = horzcat('C:\Users\chatterjeelab\Documents\Arrows_FMRI\Behavioral_Exp v03\stimuli_named\',num2str(part_num));
 cd(impath);
 imnames = dir('*.png');
 imloaded = struct('names','','images','');
