@@ -65,7 +65,7 @@ for i = 1:63
 end
 
 cd('C:\Users\chatterjeelab\Documents\Arrows_FMRI\Behavioral_Exp v03\Extra_Stimuli');
-practiceImsDir = dir('*jpg*');
+practiceImsDir = dir('*png*');
 tempIms = struct2cell(practiceImsDir);
 practiceIms = tempIms(1,:)';
 practiceIms = Shuffle(practiceIms);

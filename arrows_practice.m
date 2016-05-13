@@ -48,7 +48,7 @@ Screen('BlendFunction', window, 'GL_SRC_ALPHA', 'GL_ONE_MINUS_SRC_ALPHA');
 Screen('TextFont', window, 'Helvetica');
 
 cd('C:\Users\chatterjeelab\Documents\Arrows_FMRI\Behavioral_Exp v03\Extra_Stimuli');
-practiceImsDir = dir('*jpg*');
+practiceImsDir = dir('*png*');
 tempIms = struct2cell(practiceImsDir);
 practiceIms = tempIms(1,:)';
 practiceIms = Shuffle(practiceIms);
@@ -102,19 +102,19 @@ for i = 1:length(practiceIms)
     while ~pressed
         [pressed, firstPress] = KbQueueCheck();
         if firstPress(KbName('c'))
-            responses{2,i} = 'sharpleft';
+            responses{2,i} = 'shLeft';
         elseif firstPress(KbName('f'))
             responses{2,i} = 'left';
         elseif firstPress(KbName('t'))
-            responses{2,i} = 'slightleft';
+            responses{2,i} = 'slLeft';
         elseif firstPress(KbName('y'))
             responses{2,i} = 'ahead';
         elseif firstPress(KbName('u'))
-            responses{2,i} = 'slightright';
+            responses{2,i} = 'slRight';
         elseif firstPress(KbName('j'))
             responses{2,i} = 'right';
         elseif firstPress(KbName('m'))
-            responses{2,i} = 'sharpright';
+            responses{2,i} = 'shRight';
         else
             continue
         end
