@@ -4,13 +4,15 @@
 
 numImages = 504;
 numDirections = 7;
+numExemplars = 24;
+numFormats = 3;
 
 %1=ahead,2=left,3=right,4=shLeft,5=shRight,6=slLeft,7=slRight
 directionIndex = [ones(1,(numImages/numDirections)) 2*ones(1,(numImages/numDirections)) 3*ones(1,(numImages/numDirections)) 4*ones(1,(numImages/numDirections)) ...
     5*ones(1,(numImages/numDirections)) 6*ones(1,(numImages/numDirections)) 7*ones(1,(numImages/numDirections))];
 
 %1=image,2=schema,3=word
-formatIndex = repmat([ones(1,(numImages/21)) 2*ones(1,(numImages/21)) 3*ones(1,(numImages/21))],1,(numImages/36));
+formatIndex = repmat([ones(1,(numImages/(numFormats*numDirections))) 2*ones(1,(numImages/(numFormats*numDirections))) 3*ones(1,(numImages/(numFormats*numDirections)))],1,(numDirections));
 
 
 %delete the diagonal (1's)    
