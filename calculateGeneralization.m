@@ -2,11 +2,12 @@
 
 % %calculate within and between correlations
 
-numImages = 252;
-
+numImages = 504;
+numDirections = 7;
 
 %1=ahead,2=left,3=right,4=shLeft,5=shRight,6=slLeft,7=slRight
-directionIndex = [ones(1,(numImages/7)) 2*ones(1,(numImages/7)) 3*ones(1,(numImages/7)) 4*ones(1,(numImages/7)) 5*ones(1,(numImages/7)) 6*ones(1,(numImages/7)) 7*ones(1,(numImages/7))];
+directionIndex = [ones(1,(numImages/numDirections)) 2*ones(1,(numImages/numDirections)) 3*ones(1,(numImages/numDirections)) 4*ones(1,(numImages/numDirections)) ...
+    5*ones(1,(numImages/numDirections)) 6*ones(1,(numImages/numDirections)) 7*ones(1,(numImages/numDirections))];
 
 %1=image,2=schema,3=word
 formatIndex = repmat([ones(1,(numImages/21)) 2*ones(1,(numImages/21)) 3*ones(1,(numImages/21))],1,(numImages/36));

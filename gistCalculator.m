@@ -7,12 +7,12 @@ currDir = pwd;
 addpath('C:\Users\stweis\Documents\MATLAB\gistdescriptor');
 
 %Where is the data?
-path = 'C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03\28_Images';
+path = 'C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03\FMRI_Experiment_Scripts\24_Images_for_gist';
 cd(path);
 %How many images?
 % numImages = 252;
 %What is the image type and format?
-a = dir(horzcat('*',imType,'*jpg*'));
+a = dir(horzcat('*',imType,'*png*'));
 
 
 % GIST Parameters:
