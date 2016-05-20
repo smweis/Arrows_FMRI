@@ -19,4 +19,4 @@ img3(y:y+size(front,1)-1, x:x+size(front,2)-1, :) = ...
 
 % And display the result.
 name = imageFront(1:end-4);
-imwrite(img3,horzcat(name,'_','.png'),'png');
+imwrite(img3,horzcat(name,'.png'),'png');

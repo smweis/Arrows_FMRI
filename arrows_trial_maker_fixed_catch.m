@@ -11,9 +11,9 @@ addpath(strcat(path,'\FINAL_24_IMAGES'));
 %part_num = input('What is the participant ID? ');
 
 if mod(part_num,2) == 0
-    counter_balance = 1;
-else
     counter_balance = 2;
+else
+    counter_balance = 1;
 end
 
 %counter_balance = input('What is the counter_balance? (1 for Right is Correct) ');
