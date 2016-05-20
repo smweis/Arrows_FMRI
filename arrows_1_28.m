@@ -307,8 +307,8 @@ for which_run = run_number:numRuns
             KbQueueFlush();        
             %%%%THIS FIXES THE LAG FOR THE OVERALL EXP. BY SHORTENING NULL
             %%%%TRIALS. Shouldn't be more than .2-.3 seconds.
-
-            if (i-first_trial) > 7 && (last_trial - i) < 99
+         
+            if (i-first_trial) > 7 && (last_trial - i) > 6 
                 if strcmp(trials(2,i+1), 'NULL') && not(strcmp(trials{2,i+2},'NULL')) && not(strcmp(trials{2,i+3},'NULL'))    
                     total_delay = trials{5,i-6} - fix(trials{5,i-6});
                     if total_delay > (trials{5,i-1} - fix(trials{5,i-1}))
@@ -316,12 +316,14 @@ for which_run = run_number:numRuns
                     elseif total_delay > .5
                         total_delay = 0;
                     end
+                else
+                    total_delay = 0;
+                end
             else
                 total_delay = 0;
-                end
             end
             
-            
+ 
             
             
             
