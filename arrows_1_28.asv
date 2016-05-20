@@ -539,7 +539,7 @@ for which_run = run_number:numRuns
             
     Screen('Flip',window);
     
-    clear('imloaded');
+    clear('
     
     
     T = cell2table(trials(:,first_trial:last_trial)', 'VariableNames',{'Image','Format','Direction','Number','Stim_onset','Trial_begins','Raw_Flip_Secs_Stimulus','Catch_1_format',...
