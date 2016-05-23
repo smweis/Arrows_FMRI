@@ -307,9 +307,14 @@ for which_run = run_number:numRuns
             KbQueueFlush();        
             %%%%THIS FIXES THE LAG FOR THE OVERALL EXP. BY SHORTENING NULL
             %%%%TRIALS. Shouldn't be more than .2-.3 seconds.
+<<<<<<< HEAD
 
+            if (i-first_trial) > 7 && (last_trial - i) < 99 && strcmp(trials(2,i+1), 'NULL') && not(strcmp(trials{2,i+2},'NULL')) && not(strcmp(trials{2,i+3},'NULL'))    
+=======
+         
             if (i-first_trial) > 7 && (last_trial - i) > 6 
                 if strcmp(trials(2,i+1), 'NULL') && not(strcmp(trials{2,i+2},'NULL')) && not(strcmp(trials{2,i+3},'NULL'))    
+>>>>>>> origin/master
                     total_delay = trials{5,i-6} - fix(trials{5,i-6});
                     if total_delay > (trials{5,i-1} - fix(trials{5,i-1}))
                         total_delay = 0;
@@ -555,9 +560,9 @@ for which_run = run_number:numRuns
     end
     if exist ((horzcat(num2str(part_num),'_',num2str(which_run),'.mat')),'file') == 2
         currTime = datetime('now','Format','yyyy-MM-dd''T''HHmmss');
-        save(horzcat(num2str(part_num),'_',num2str(which_run),'_',char(currTime)), '-regexp', '^(?!(imloaded)$.');
+        save(horzcat(num2str(part_num),'_',num2str(which_run),'_',char(currTime)))save('test', '-regexp', '^(?!(a|d)$).');
     else
-        save(horzcat(num2str(part_num),'_',num2str(which_run)), '-regexp', '^(?!(imloaded)$.');
+        save(horzcat(num2str(part_num),'_',num2str(which_run)));
     end
        
    
@@ -592,9 +597,9 @@ end
 
 if exist ((horzcat(num2str(part_num),'_total.mat')),'file') == 2
     currTime = datetime('now','Format','yyyy-MM-dd''T''HHmmss');
-    save(horzcat(num2str(part_num),'_total_',char(currTime)), '-regexp', '^(?!(imloaded)$.');
+    save(horzcat(num2str(part_num),'_total_',char(currTime)));
 else
-    save(horzcat(num2str(part_num),'_total.mat'), '-regexp', '^(?!(imloaded)$.');
+    save(horzcat(num2str(part_num),'_total.mat'));
 end
 
 
