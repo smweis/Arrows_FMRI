@@ -555,7 +555,7 @@ for which_run = run_number:numRuns
     end
     if exist ((horzcat(num2str(part_num),'_',num2str(which_run),'.mat')),'file') == 2
         currTime = datetime('now','Format','yyyy-MM-dd''T''HHmmss');
-        save(horzcat(num2str(part_num),'_',num2str(which_run),'_',char(currTime)), '-regexp', '^(?!(imloaded)$.');
+        save(horzcat(num2str(part_num),'_',num2str(which_run),'_',char(currTime)), '-regexp', '^(imloaded)');
     else
         save(horzcat(num2str(part_num),'_',num2str(which_run)), '-regexp', '^(?!(imloaded)$.');
     end
