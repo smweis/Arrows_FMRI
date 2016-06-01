@@ -4,9 +4,9 @@ function [] = calculateMvpaWithins()
 
 % DEPENDENCY! combinator package for matlab
 
-addpath('MVPA_Data_4_Subjects');
+addpath('F:\MVPA_ARROWS\MVPA_107_and_up\');
 
-allSubjects = {'103','104','105','106'};
+allSubjects = {'107','108','109','110'};
 
 nParameters = 21;
 nRuns = 6;
@@ -41,7 +41,7 @@ roiNames = {'OPA','PPA','RSC'};
 
 for thisSubject = 1:length(allSubjects)
     
-    cd (horzcat('MVPA_Data_4_Subjects/',allSubjects{thisSubject})); %go to subject directory
+    cd (horzcat('F:\MVPA_ARROWS\MVPA_107_and_up\',allSubjects{thisSubject},'\Brain_Data\MVPA_Data\')); %go to subject directory
     
     for thisRoi = 1:length(roiNames)
         cd('ROI_Masks');
@@ -77,7 +77,63 @@ for thisSubject = 1:length(allSubjects)
         end
         rdm(rdm==0) = NaN;
         rdm_mean = nanmean(rdm,3);
-        save(strcat(roiNames{thisRoi},'_within'),'rdm','rdm_mean');  
+        
+        sameDirDiffFormat = zeros(1,6048);
+        diffDirDiffFormat = zeros(1,36288);
+        sameDirSameFormat = zeros(1,3024);
+        diffDirSameFormat = zeros(1,18144);
+        diffDir = zeros(1,54432);
+        sameDir = zeros(1,9072);
+        
+        sddfCount = 1;
+        dddfCount = 1;
+        sdsfCount = 1;
+        ddsfCount = 1;
+        ddCount = 1;
+        sdCount = 1;
+        
+        for image1 = 1:length(rdm_mean)
+            for image2 = 1:length(rdm_mean)
+                dirIsSame = directionIndex(image1) == directionIndex(image2);
+                formatIsSame = formatIndex(image1) == formatIndex(image2);
+                if (dirIsSame&&~formatIsSame)
+                    sameDirDiffFormat(1,sddfCount) = rdm_mean(image1,image2);
+                    sameDir(1,sdCount) = rdm_mean(image1,image2);
+                    sddfCount = sddfCount + 1;
+                    sdCount = sdCount + 1;
+                elseif (~dirIsSame&&~formatIsSame)
+                    diffDirDiffFormat(1,dddfCount) = rdm_mean(image1,image2);
+                    diffDir(1,ddCount) = rdm_mean(image1,image2);
+                    dddfCount = dddfCount + 1;
+                    ddCount = ddCount + 1;
+                elseif (dirIsSame&&formatIsSame)
+                    sameDirSameFormat(1,sdsfCount) = rdm_mean(image1,image2);
+                    sameDir(1,sdCount) = rdm_mean(image1,image2);
+                    sdsfCount = sdsfCount + 1;
+                    sdCount = sdCount + 1;
+                elseif (~dirIsSame&&formatIsSame)
+                    diffDirSameFormat(1,ddsfCount) = rdm_mean(image1,image2);
+                    diffDir(1,ddCount) = rdm_mean(image1,image2);
+                    ddsfCount = ddsfCount + 1;
+                    ddCount = ddCount + 1;
+                end
+            end
+        end
+        
+        
+        
+        
+        sameDirDiffFormatMean = nanmean(sameDirDiffFormat);
+        diffDirDiffFormatMean = nanmean(diffDirDiffFormat);
+        diffDirSameFormatMean = nanmean(diffDirSameFormat);
+        sameDirSameFormatMean = nanmean(sameDirSameFormat);
+        sameDirMean = nanmean(sameDir);
+        diffDirMean = nanmean(diffDir);
+        
+        
+        generalize = sameDirDiffFormatMean - diffDirDiffFormatMean;
+        
+        save(strcat(roiNames{thisRoi},'_within'),'rdm','rdm_mean','sameDirDiffFormatMean','diffDirDiffFormatMean','sameDirSameFormatMean','diffDirSameFormatMean','generalize');  
     end
     
     

@@ -3,7 +3,7 @@ function [] = calculateMvpaGeneralization(subjects)  %enter subjects as cell arr
 pathSeed();
 
 %%additional path for script
-addpath('MVPA_Data_4_Subjects');
+addpath('F:\MVPA_ARROWS\MVPA_107_and_up\');
 
 allSubjects = subjects;
 
@@ -31,7 +31,7 @@ roiNames = {'OPA','PPA','RSC'};
 
 for thisSubject = 1:length(allSubjects)
     
-    cd (horzcat('MVPA_Data_4_Subjects/',allSubjects{thisSubject})); %go to subject directory
+    cd (horzcat('F:\MVPA_ARROWS\MVPA_107_and_up\',allSubjects{thisSubject},'\Brain_Data\MVPA_Data\')); %go to subject directory
     
     for thisRoi = 1:length(roiNames)
         cd('ROI_Masks');

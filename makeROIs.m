@@ -1,14 +1,15 @@
 
 
-allSubjects = {'103','104','105','106'};
+allSubjects = {'107','108','109','110'};
 
 currDir = pwd;
 
-roiPath = 'C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03\MVPA_Data_4_Subjects\ROI_templates';
+roiPath = 'F:\MVPA_ARROWS\MVPA_107_and_up\ROI_templates\';
 addpath(roiPath);
 cd(roiPath);
 
-subjectPath = 'C:\Users\stweis\SkyDrive\MVPA_ARROWS\FMRI_Materials\Behavioral_Exp v03\MVPA_Data_4_Subjects\';
+subjectPath = 'F:\MVPA_ARROWS\MVPA_107_and_up\';
+subjectPathRest = '\Brain_Data\MVPA_Data\';
 
 roiDir = 'ROI_Masks';
 roiNames = {'LOPA','LPPA','LRSC','ROPA','RPPA','RRSC'};
@@ -18,7 +19,7 @@ roiNames = {'LOPA','LPPA','LRSC','ROPA','RPPA','RRSC'};
 %%this finds the intersection of each brain area w/ the top 100 voxels
 %%activated for images - other.
 for thisSubject = 1:length(allSubjects)
-    cd(horzcat(subjectPath,allSubjects{thisSubject}));
+    cd(horzcat(subjectPath,allSubjects{thisSubject},subjectPathRest));
     mkdir(roiDir);
     subjectUnivariate = load_nii('scene_uni.nii.gz');  %load images - else
     for roi = 1:length(roiNames)

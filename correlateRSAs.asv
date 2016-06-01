@@ -22,7 +22,7 @@ roiNames = {'OPA','PPA','RSC'};
 
 correlationData = zeros(length(allSubjects),length(roiNames)*(length(rsaWithinRDMS)+2));
 correlationOrder = cell(1,length(roiNames)*(length(rsaWithinRDMS)+2));
-rdmtype = [ones(1,3) 2*ones(1,3) 3*ones(1,3) 4*ones(1,3) 5*ones(1,3) 6*ones(1,3) 7*ones(1,3) 8*ones(1,3)];
+rdmtype = [ones(1,8) 2*ones(1,8) 3*ones(1,8)];
 for i = 1:length(correlationOrder)
     roi = roiNames{mod(i+2,3)+1};
     correlationOrder{1,i} = strcat(roi,'_',allRDMS{rdmtype(i)});
@@ -30,7 +30,7 @@ end
 
 
 for thisSubject = 1:length(allSubjects)
-    cd(horzcat(subjectPath,allSubjects{thisSubject},'\Brain_Data\MVPA_Data\'));
+    cd(horzcat(subjectPath,allSubjects{thisSubject}));
 
     for thisRoi = 1:length(roiNames)
         load(strcat(roiNames{thisRoi},'_generalization.mat'));
