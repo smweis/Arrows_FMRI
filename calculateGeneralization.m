@@ -82,12 +82,12 @@ end
 
 %%This is the same thing, or should be, but steps through each IMAGE. 
 %These sizes are arbitrary.
-sameDirDiffFormat = zeros(1,6048);
-diffDirDiffFormat = zeros(1,36288);
-sameDirSameFormat = zeros(1,3024);
-diffDirSameFormat = zeros(1,18144);
-diffDir = zeros(1,54432);
-sameDir = zeros(1,9072);
+sameDirDiffFormat = zeros(1,1);
+diffDirDiffFormat = zeros(1,1);
+sameDirSameFormat = zeros(1,1);
+diffDirSameFormat = zeros(1,1);
+diffDir = zeros(1,1);
+sameDir = zeros(1,1);
 
 sddfCount = 1;
 dddfCount = 1;

@@ -78,10 +78,10 @@ for thisSubject = 1:length(allSubjects)
         rdm(rdm==0) = NaN;
         rdm_mean = nanmean(rdm,3);
         
-        sameDirDiffFormat = zeros(1,6048);
-        diffDirDiffFormat = zeros(1,36288);
-        sameDirSameFormat = zeros(1,3024);
-        diffDirSameFormat = zeros(1,18144);
+        sameDirDiffFormat = zeros(1,1);
+        diffDirDiffFormat = zeros(1,1);
+        sameDirSameFormat = zeros(1,1);
+        diffDirSameFormat = zeros(1,1);
         diffDir = zeros(1,54432);
         sameDir = zeros(1,9072);
         
