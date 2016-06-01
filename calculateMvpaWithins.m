@@ -15,13 +15,13 @@ b = 1:nRuns;
 result = combvec(a,b);
 loadNiiVector = result';
 
-pairwiseRunsSame = nchoosek(1:nRuns,2); %we don't want to correlate each run w/ itself
-pairwiseRunsDiff = combinator(6,2,'c','r');
+pairwiseRuns = nchoosek(1:nRuns,2); %we don't want to correlate each run w/ itself
+
 pairwiseParameters = combinator(21,2,'c','r'); 
 
 
 
-rdm = zeros(nParameters,nParameters,length(pairwiseRunsDiff)); %set rdm size
+rdm = zeros(nParameters,nParameters,length(pairwiseRuns)); %set rdm size
 
 %1=ahead,2=left,3=right,4=shLeft,5=shRight,6=slLeft,7=slRight
 directionIndex = [ones(1,(nParameters/7)) 2*ones(1,(nParameters/7)) 3*ones(1,(nParameters/7)) 4*ones(1,(nParameters/7)) 5*ones(1,(nParameters/7)) 6*ones(1,(nParameters/7)) 7*ones(1,(nParameters/7))];
@@ -61,11 +61,6 @@ for thisSubject = 1:length(allSubjects)
         
         %take all pairwise correlations, and put them in the RDM.
         for thisParameter = 1:length(pairwiseParameters)
-            if pairwiseParameters(thisParameter,1) == pairwiseParameters(thisParameter,2)
-                pairwiseRuns = pairwiseRunsSame;
-            else
-                pairwiseRuns = pairwiseRunsDiff;
-            end
             
             for thisRun = 1:length(pairwiseRuns)
                 tempParamIndex1 = (pairwiseParameters(thisParameter,1)-1)*6 + pairwiseRuns(thisRun,1);
@@ -82,8 +77,8 @@ for thisSubject = 1:length(allSubjects)
         diffDirDiffFormat = zeros(1,1);
         sameDirSameFormat = zeros(1,1);
         diffDirSameFormat = zeros(1,1);
-        diffDir = zeros(1,54432);
-        sameDir = zeros(1,9072);
+        diffDir = zeros(1,1);
+        sameDir = zeros(1,1);
         
         sddfCount = 1;
         dddfCount = 1;
