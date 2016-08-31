@@ -1,6 +1,6 @@
 
 
-allSubjects = {'107','108','109','110'};
+allSubjects = {'107','108','109','110','112','113','114','115','116','117','118','120','122','123','124'};
 
 currDir = pwd;
 
@@ -9,7 +9,7 @@ addpath(roiPath);
 cd(roiPath);
 
 subjectPath = 'F:\MVPA_ARROWS\MVPA_107_and_up\';
-subjectPathRest = '\Brain_Data\MVPA_Data\';
+subjectPathRest = '\Brain_Data\MVPA_Data';
 
 roiDir = 'ROI_Masks';
 roiNames = {'LOPA','LPPA','LRSC','ROPA','RPPA','RRSC'};

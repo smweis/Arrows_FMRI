@@ -83,3 +83,11 @@ dataArray = textscan(fileID, formatSpec, 'Delimiter', delimiter, 'EmptyValue' ,N
 fclose(fileID);
 rsaWithinContWord = [dataArray{1:end-1}];
 clearvars filename delimiter startRow formatSpec fileID dataArray ans;
+
+
+rsaWithinContImage = rsaWithinContImage(1:21,1:21);
+rsaWithinContSchema = rsaWithinContSchema(1:21,1:21);
+rsaWithinContWord = rsaWithinContWord(1:21,1:21);
+rsaWithinDiscImage = rsaWithinDiscImage(1:21,1:21);
+rsaWithinDiscSchema = rsaWithinDiscSchema(1:21,1:21);
+rsaWithinDiscWord = rsaWithinDiscWord(1:21,1:21);

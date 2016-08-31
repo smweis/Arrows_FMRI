@@ -1,13 +1,13 @@
 
 addpath('C:\Users\stweis\Documents\GitHub\Arrows_FMRI');
 
-dataPath = 'F:\MVPA_Arrows\MVPA_107_and_up\';
+dataPath = 'F:\BoxSync\Box Sync\MVPA_ARROWS\MVPA_Data_Full_Sample\';
 allPath = genpath(dataPath);
 addpath(allPath);
 
 cd(dataPath);
 
-participants = [107 108 109 110];
+participants = [114:124];
 
 for participant = 1:length(participants)
     part_num = participants(participant);
